@@ -1,0 +1,32 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int vacunas;
+        int totalVacunas = 0;
+        double promedio;
+
+        string[] dias = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo" };
+
+       
+        for (int i = 0; i < 7; i++)
+        {
+            Console.Write("Ingrese la cantidad de vacunas aplicadas el " + dias[i] + ": ");
+            vacunas = Convert.ToInt32(Console.ReadLine());
+
+            totalVacunas += vacunas; // acumulador
+        }
+
+       
+        promedio = totalVacunas / 7.0;
+
+        
+        Console.WriteLine("\n=== REPORTE SEMANAL DE VACUNACIÓN ===");
+        Console.WriteLine("Total de vacunas aplicadas: " + totalVacunas);
+        Console.WriteLine("Promedio diario de vacunas: " + promedio);
+
+        Console.ReadKey();
+    }
+}
