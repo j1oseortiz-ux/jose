@@ -1,0 +1,50 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+       
+        string nombre;
+        int edad;
+        double peso;
+        double estatura;
+        bool tieneSeguro;
+        double imc;
+
+        
+        Console.WriteLine("=== REGISTRO DE PACIENTE ===");
+
+        Console.Write("Nombre: ");
+        nombre = Console.ReadLine();
+
+        Console.Write("Edad: ");
+        edad = int.Parse(Console.ReadLine());
+
+        Console.Write("Peso (kg): ");
+        peso = double.Parse(Console.ReadLine());
+
+        Console.Write("Estatura (m): ");
+        estatura = double.Parse(Console.ReadLine());
+
+        Console.Write("¿Tiene seguro? (S/N): ");
+        string seguro = Console.ReadLine().ToUpper();
+
+        tieneSeguro = seguro == "S";
+
+        
+        imc = peso / (estatura * estatura);
+
+        
+        Console.WriteLine("\n=== FICHA MÉDICA DEL PACIENTE ===");
+        Console.WriteLine("Nombre: " + nombre);
+        Console.WriteLine("Edad: " + edad + " años");
+        Console.WriteLine("Peso: " + peso + " kg");
+        Console.WriteLine("Estatura: " + estatura + " m");
+        Console.WriteLine("Tiene seguro: " + (tieneSeguro ? "Sí" : "No"));
+        Console.WriteLine("IMC: " + imc.ToString("F2"));
+
+        Console.WriteLine("\nPresione cualquier tecla para salir...");
+        Console.ReadKey();
+    }
+}
